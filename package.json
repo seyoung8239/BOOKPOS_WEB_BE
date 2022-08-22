@@ -1,0 +1,25 @@
+{
+  "name": "bookpos_web_be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seyoung8239/BOOKPOS_WEB_BE.git"
+  },
+  "author": "seyoung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seyoung8239/BOOKPOS_WEB_BE/issues"
+  },
+  "homepage": "https://github.com/seyoung8239/BOOKPOS_WEB_BE#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongodb": "^4.9.0",
+    "mongoose": "^6.5.2"
+  }
+}
