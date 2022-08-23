@@ -7,7 +7,7 @@ estimationRouter.post("/", (req, res) => {
     const est = new Estimation(req.body);
 
     est.save();
-    res.status(201).send("estimation registered");
+    res.status(201).send("inquiry registered");
 });
 
 export default estimationRouter;
