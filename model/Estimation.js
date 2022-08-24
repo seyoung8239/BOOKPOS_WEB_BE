@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const estSchema = new mongoose.Schema({
+    id: String,
     type: String,
     capacity: Number,
 
