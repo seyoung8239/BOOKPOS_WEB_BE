@@ -4,6 +4,7 @@ import cors from "cors";
 import "dotenv/config";
 
 import estimationRouter from "./routes/estimationRouter.js";
+import newsRouter from "./routes/newsRouter.js";
 
 const app = express();
 const port = 4000;
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/estimation", estimationRouter);
+app.use("/news", newsRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`server start on port: ${process.env.PORT}`);
