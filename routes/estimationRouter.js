@@ -10,14 +10,14 @@ estimationRouter.get("/", async (req, res) => {
     res.status(200).json(allEstimation);
 });
 
-estimationRouter.post("/", (req, res) => {
+estimationRouter.post("/", async (req, res) => {
     const estimation = new Estimation({ ...req.body, id: uuidv4() });
-    estimation.save();
+    await estimation.save();
     res.status(201).send("inquiry registered");
 });
 
 estimationRouter.delete("/:id", async (req, res) => {
-    console.log('asdf');
+    console.log("asdf");
     const id = req.params.id;
     console.log(id);
     const d = await Estimation.deleteOne({ id: id });

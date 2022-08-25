@@ -39,20 +39,25 @@ newsRouter.post("/", upload.single("image"), async (req, res) => {
         contentType: req.file.mimetype,
     };
 
-    const news = new News({ ...req.body, id: uuidv4(), image: image });
+    const news = new News({
+        ...req.body,
+        id: uuidv4(),
+        image: image,
+        date: new Date().toJSON(),
+    });
     await news.save();
     res.status(201).send("news registered");
 });
 
-newsRouter.put("/:id", (req, res) => {
+newsRouter.put("/:id", async (req, res) => {
     const id = req.params.id;
-    News.updateOne({ id: id }, { res });
+    await News.updateOne({ id: id }, { res });
     res.status(200).send("new updated");
 });
 
-newsRouter.delete("/:id", (req, res) => {
+newsRouter.delete("/:id", async (req, res) => {
     const id = req.params.id;
-    News.deleteOne({ id: id }).then((d) => console.log("deleted", d));
+    await News.deleteOne({ id: id }).then((res) => console.log(res));
     res.status(200).send("news deleted");
 });
 
