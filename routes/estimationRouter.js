@@ -13,7 +13,7 @@ estimationRouter.get("/", async (req, res) => {
 estimationRouter.post("/", async (req, res) => {
     const estimation = new Estimation({ ...req.body, id: uuidv4() });
     await estimation.save();
-    res.status(201).send("inquiry registered");
+    res.status(201).send("ok");
 });
 
 estimationRouter.delete("/:id", async (req, res) => {
@@ -22,7 +22,7 @@ estimationRouter.delete("/:id", async (req, res) => {
     console.log(id);
     const d = await Estimation.deleteOne({ id: id });
     console.log("deleted", d);
-    res.status(200).send("inquiry deleted");
+    res.status(200).send("ok");
 });
 
 export default estimationRouter;

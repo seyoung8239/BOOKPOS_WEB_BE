@@ -46,19 +46,19 @@ newsRouter.post("/", upload.single("image"), async (req, res) => {
         date: new Date().toJSON(),
     });
     await news.save();
-    res.status(201).send("news registered");
+    res.status(201).send("ok");
 });
 
 newsRouter.put("/:id", async (req, res) => {
     const id = req.params.id;
     await News.updateOne({ id: id }, { res });
-    res.status(200).send("new updated");
+    res.status(200).send("ok");
 });
 
 newsRouter.delete("/:id", async (req, res) => {
     const id = req.params.id;
     await News.deleteOne({ id: id }).then((res) => console.log(res));
-    res.status(200).send("news deleted");
+    res.status(200).send("ok");
 });
 
 export default newsRouter;
